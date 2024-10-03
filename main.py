@@ -1,7 +1,7 @@
-def create_flow(service_spec, deployment_spec, flow_uuid):
-    deployment_spec['template']['spec']['containers'][0]["image"] = "kurtosistech/redis-proxy-overlay:latest"
+def create_flow(service_spec, pod_spec, flow_uuid):
+    pod_spec['containers'][0]["image"] = "kurtosistech/redis-proxy-overlay:latest"
     return {
-        "deployment_spec": deployment_spec,
+        "pod_spec": pod_spec,
         "config_map": {}
     }
 
